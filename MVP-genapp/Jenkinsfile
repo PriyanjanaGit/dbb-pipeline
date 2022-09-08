@@ -1,3 +1,4 @@
+//Modifications of Priyanjana on 08/09/2022
 // GitLab mvpgenapp group MVP-genapp Ray 6/02/2021 10:46AM ADDED ZUNIT
 // Make sure to disable Gitlab CI Pipeline
 // https://developer.ibm.com/components/ibmz/tutorials/build-a-pipeline-with-jenkins-dependency-based-build-and-urbancode-deploy/
@@ -7,7 +8,8 @@ def zOsAgentLabel = env.ZOS_AGENT_LABEL ? env.ZOS_AGENT_LABEL : 'zosAgent'
 def linuxAgent = 'master'
 
 // GIT repositories
-def srcGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-pipeline.git'
+//def srcGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-pipeline.git'
+def srcGitRepo = 'https://github.com/PriyanjanaGit/dbb-pipeline.git'
 def srcGitBranch = 'master'
 def zAppBuildGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-zappbuild-new.git'
 def zAppBuildGitBranch = 'develop' // Some important issues are not yet merged into master.
@@ -18,7 +20,8 @@ echo 'MVP-genapp Jenkinsfile pipeline DBB'
 def dbbHome='/var/dbb'
 //def dbbUrl='https://dbbsample-dbb-route-dbbserver.apps.mvpopenshift.cp.fyre.ibm.com/dbb'
 def dbbUrl='https://mvpserver1.fyre.ibm.com:9443/dbb'
-def dbbHlq='RLAM'
+//def dbbHlq='RLAM'
+def dbbHlq='PROY'
 def dbbBuildType='-f'
 def dbbGroovyzOpts= '-Dlog4j.configurationFile=/var/dbb/conf/log4j2.properties'
 // def dbbGroovyzOpts= '-DBB_PERSONAL_DAEMON -Dlog4j.configurationFile=/var/dbb/conf/log4j2.properties'
@@ -29,7 +32,8 @@ def dbbCredentialOptions='-id ADMIN -pw ADMIN'
 
 echo 'MVP-genapp Jenkinsfile pipeline Artifactory'
 // Artifactory
-def artiCredentialsId = 'ray_artifactory_id'
+//def artiCredentialsId = 'ray_artifactory_id'
+def artiCredentialsId = 'Priya_artifactory_id'
 def ARTIFACTORY_URL='https://na.artifactory.swg-devops.com/artifactory/'
 def ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/MVPGenapp'
 
@@ -79,7 +83,8 @@ pipeline {
         DBB_CONF='/var/dbb113/conf'
     //  DBB_URL='https://dbbsample-dbb-route-dbbns.apps.mvpopenshift.cp.fyre.ibm.com/dbb/'
         DBB_URL='https://mvpserver1.fyre.ibm.com:9443/dbb' 
-        DBB_HLQ='RLAM'
+//      DBB_HLQ='RLAM'
+        DBB_HLQ='PROY'
         ARTIFACTORY_URL='https://na.artifactory.swg-devops.com/artifactory'
         ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/MVPGenapp'
         UCD_BUZTOOL_PATH='/var/ucd/v71/bin/buztool.sh'
