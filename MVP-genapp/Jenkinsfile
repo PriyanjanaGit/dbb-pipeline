@@ -9,11 +9,16 @@ def linuxAgent = 'master'
 
 // GIT repositories
 //def srcGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-pipeline.git'
+//def srcGitBranch = 'master'
+//def zAppBuildGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-zappbuild-new.git'
+//def zAppBuildGitBranch = 'develop' // Some important issues are not yet merged into master.
+//def dbbGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-new.git'
+//def dbbGitBranch = 'main'
 def srcGitRepo = 'https://github.com/PriyanjanaGit/dbb-pipeline.git'
 def srcGitBranch = 'master'
-def zAppBuildGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-zappbuild-new.git'
-def zAppBuildGitBranch = 'develop' // Some important issues are not yet merged into master.
-def dbbGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-new.git'
+def zAppBuildGitRepo = 'https://github.com/PriyanjanaGit/dbb-zappbuild-new.git'
+def zAppBuildGitBranch = 'main'
+def dbbGitRepo = 'https://github.com/PriyanjanaGit/dbb-new.git'
 def dbbGitBranch = 'main'
 echo 'MVP-genapp Jenkinsfile pipeline DBB'
 // DBB
