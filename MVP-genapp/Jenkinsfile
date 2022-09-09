@@ -76,11 +76,13 @@ echo 'MVP-genapp Jenkinsfile pipeline Stage Git Clone/Refresh '
 pipeline {
 
     agent { label linuxAgent }
+echo 'linuxAgent' $linuxAgent    
 
     options { skipDefaultCheckout(true) }
 
     // to set environment variables flag
     environment {
+echo 'environment flag set'
         RUN_IDZ_CODE_REVIEW=false
         JAVA_HOME='/usr/lpp/java/J8.0_64'
         IBM_JAVA_ENABLE_ASCII_FILETAG='ON'
@@ -105,7 +107,7 @@ pipeline {
 
 
     }
-
+echo 'before stages'
     stages {
 
         stage('Git Clone/Refresh') {
