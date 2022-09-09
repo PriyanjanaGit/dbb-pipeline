@@ -106,7 +106,6 @@ pipeline {
 
 
     }
-echo 'before stages'
     stages {
 
         stage('Git Clone/Refresh') {
