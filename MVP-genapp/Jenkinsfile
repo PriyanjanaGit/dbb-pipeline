@@ -73,7 +73,6 @@ String getArtifactoruUrl(String artiUrl) {
 */
 
 echo 'MVP-genapp Jenkinsfile pipeline Stage Git Clone/Refresh '
-echo 'linuxAgent' $linuxAgent
 pipeline {
 
     agent { label linuxAgent }    
