@@ -5,7 +5,7 @@
 // Agent labels
 echo 'MVP-genapp Jenkinsfile pipeline started'
 //def zOsAgentLabel = env.ZOS_AGENT_LABEL ? env.ZOS_AGENT_LABEL : 'zosAgent'
-def zOsAgentLabel = env.ZOS_AGENT_LABEL ? env.ZOS_AGENT_LABEL : 'Priya_zOS-agent'
+def zOsAgentLabel = env.ZOS_AGENT_LABEL ? env.ZOS_AGENT_LABEL : 'e2e-pipeline'
 def linuxAgent = 'master'
 
 // GIT repositories
