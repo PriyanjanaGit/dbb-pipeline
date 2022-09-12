@@ -76,7 +76,8 @@ String getArtifactoruUrl(String artiUrl) {
 echo 'MVP-genapp Jenkinsfile pipeline Stage Git Clone/Refresh '
 pipeline {
 
-    agent { label linuxAgent }    
+//    agent { label linuxAgent }   
+    agent { label zOsAgentLabel }    
 
     options { skipDefaultCheckout(true) }
 
