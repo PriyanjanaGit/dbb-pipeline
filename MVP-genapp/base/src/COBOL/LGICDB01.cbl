@@ -115,7 +115,7 @@
        MAINLINE SECTION.
 
            DISPLAY 'PROY'.
-           DISPLAY 'FOR CODE REVIEW TESTING'.
+           DISPLAY 'FOR CODE COVERAGE TESTING'.
       *----------------------------------------------------------------*
       * Common code                                                    *
       *----------------------------------------------------------------*
