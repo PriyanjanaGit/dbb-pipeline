@@ -115,7 +115,7 @@
        MAINLINE SECTION.
 
            DISPLAY 'PROY'.
-           DISPLAY 'FOR IDZ CODE REVIEW TESTING'.
+           DISPLAY 'FOR CODE REVIEW TESTING'.
       *----------------------------------------------------------------*
       * Common code                                                    *
       *----------------------------------------------------------------*
