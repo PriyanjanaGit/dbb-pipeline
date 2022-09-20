@@ -41,7 +41,8 @@ echo 'MVP-genapp Jenkinsfile pipeline Artifactory'
 //def artiCredentialsId = 'ray_artifactory_id'
 def artiCredentialsId = 'Priya_artifactory_id'
 def ARTIFACTORY_URL='https://na.artifactory.swg-devops.com/artifactory/'
-def ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/MVPGenapp'
+//def ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/MVPGenapp'
+def ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/PriyaGenapp'
 
 
 
@@ -94,7 +95,8 @@ pipeline {
 //      DBB_HLQ='RLAM'
         DBB_HLQ='PROY'
         ARTIFACTORY_URL='https://na.artifactory.swg-devops.com/artifactory'
-        ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/MVPGenapp'
+//        ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/MVPGenapp'
+        ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/PriyaGenapp'
         UCD_BUZTOOL_PATH='/var/ucd/v71/bin/buztool.sh'
         UCD_HOME='/var/ucd/v71'
         _BPX_JOBNAME = 'JENJOB'
