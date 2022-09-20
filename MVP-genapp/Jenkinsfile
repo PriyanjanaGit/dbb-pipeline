@@ -308,7 +308,8 @@ echo 'MVP-genapp Jenkinsfile pipeline dir -> MVP-genapp '
                             dir("${WORKSPACE}/BUILD-${BUILD_NUMBER}/${BUILD_OUTPUT_FOLDER}") {
                                 withCredentials([usernamePassword(credentialsId: artiCredentialsId, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                                     writeFile file: "${WORKSPACE}/BUILD-${BUILD_NUMBER}/artifactoy.properties", encoding: "ibm-1047",
-                                       text:"""EXTREPO.APIKEY=$PASSWORD
+                                       text:"""EXTREPO.PASSWORD=$PASSWORD
+//                                       text:"""EXTREPO.APIKEY=$PASSWORD
 EXTREPO.username=$USERNAME
 EXTREPO.Repository_type=artifactory
 EXTREPO.repository=${repositoryPath}
