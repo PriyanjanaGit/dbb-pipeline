@@ -41,8 +41,8 @@ echo 'MVP-genapp Jenkinsfile pipeline Artifactory'
 //def artiCredentialsId = 'ray_artifactory_id'
 def artiCredentialsId = 'Priya_artifactory_id'
 def ARTIFACTORY_URL='https://na.artifactory.swg-devops.com/artifactory/'
-//def ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/MVPGenapp'
-def ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/PriyaGenapp'
+def ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/MVPGenapp'
+//def ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/PriyaGenapp'
 
 
 
