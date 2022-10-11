@@ -193,6 +193,7 @@ echo 'MVP-genapp Jenkinsfile pipeline dir -> MVP-genapp '
                 script{
                     def zUnitContents = []
                     def cccFolder = null
+ echo 'zunit echo 1 '
                     node( zOsAgentLabel ) {
                         if ( env.DBB_BUILD_EXTRA_OPTS != null ) {
                            dbbBuildExtraOpts = env.DBB_BUILD_EXTRA_OPTS
@@ -227,7 +228,6 @@ echo 'MVP-genapp Jenkinsfile pipeline dir -> MVP-genapp '
                             zUnitContents << zUnitContent
                         }
                     }
-echo 'zunit echo 1 '
                     zUnitContents.each { zUnitContent ->
                         writeFile file: '/tmp/zUnit.zunit', text:zUnitContent
                         sh (returnStatus: true, script: '''#!/bin/sh
