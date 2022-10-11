@@ -251,7 +251,6 @@ echo 'MVP-genapp Jenkinsfile pipeline dir -> MVP-genapp '
                     }
                 }
             }
-echo 'zunit echo 2 '
             post {
                 always {
                     node( zOsAgentLabel ) {
