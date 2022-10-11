@@ -193,7 +193,6 @@ echo 'MVP-genapp Jenkinsfile pipeline dir -> MVP-genapp '
                 script{
                     def zUnitContents = []
                     def cccFolder = null
-echo 'zunit echo 0 '
                     node( zOsAgentLabel ) {
                         if ( env.DBB_BUILD_EXTRA_OPTS != null ) {
                            dbbBuildExtraOpts = env.DBB_BUILD_EXTRA_OPTS
