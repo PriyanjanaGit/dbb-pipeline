@@ -228,6 +228,7 @@ echo 'MVP-genapp Jenkinsfile pipeline dir -> MVP-genapp '
                             zUnitContents << zUnitContent
                         }
                     }
+ echo 'zunit echo 2 '
                     zUnitContents.each { zUnitContent ->
                         writeFile file: '/tmp/zUnit.zunit', text:zUnitContent
                         sh (returnStatus: true, script: '''#!/bin/sh
