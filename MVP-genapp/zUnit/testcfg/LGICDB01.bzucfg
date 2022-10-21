@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<runner:RunnerConfiguration xmlns:runner="http://www.ibm.com/zUnit/3.0.0.0/TestRunner" id="0e242faa-af1d-4046-bfeb-0919f1f650ef">
+<runner:RunnerConfiguration xmlns:runner="http://www.ibm.com/zUnit/3.0.0.0/TestRunner" id="16e1dc85-7e94-4cdd-a6ca-bccf9f207ddb">
   <runner:options contOnTestCaseError="false" contOnTestCaseFail="true" contOnTestError="false" contOnTestFail="true"/>
   <runner:testCase moduleName="TLGICDB0">
     <test name="TEST2" entry="TEST_TEST2" type="CICS" init="BZU_INIT" term="BZU_TERM" program="LGICDB01" skipTest="false" resetFile="true" stubCall="true" dummy="false"/>
     <test name="TEST3" entry="TEST_TEST3" type="CICS" init="BZU_INIT" term="BZU_TERM" program="LGICDB01" skipTest="false" resetFile="false" stubCall="true" dummy="false"/>
+    <test name="TEST4" entry="TEST_TEST4" type="CICS" init="BZU_INIT" term="BZU_TERM" program="LGICDB01" skipTest="false" resetFile="false" stubCall="true" dummy="false"/>
     <test name="TEST1" entry="TEST_TEST1" type="CICS" init="BZU_INIT" term="BZU_TERM" program="LGICDB01" commarea="32500" skipTest="false" resetFile="false" stubCall="true" dummy="false"/>
   </runner:testCase>
   <runner:playback moduleName="LGICDB01">
