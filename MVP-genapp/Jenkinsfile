@@ -89,8 +89,8 @@ pipeline {
         RUN_IDZ_CODE_REVIEW=true
         JAVA_HOME='/usr/lpp/java/J11.0_64'
         IBM_JAVA_ENABLE_ASCII_FILETAG='ON'
-        DBB_HOME='/var/dbb113'
-        DBB_CONF='/var/dbb113/conf'
+        DBB_HOME='/var/dbb'
+        DBB_CONF='/var/dbb/conf'
     //  DBB_URL='https://dbbsample-dbb-route-dbbns.apps.mvpopenshift.cp.fyre.ibm.com/dbb/'
         DBB_URL='https://mvpserver1.fyre.ibm.com:9443/dbb'
 //      DBB_HLQ='RLAM'
