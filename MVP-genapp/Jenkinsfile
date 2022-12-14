@@ -87,7 +87,7 @@ pipeline {
     environment {
 //        RUN_IDZ_CODE_REVIEW=false
         RUN_IDZ_CODE_REVIEW=true
-        JAVA_HOME='/usr/lpp/java/J8.0_64'
+        JAVA_HOME='/usr/lpp/java/J11.0_64'
         IBM_JAVA_ENABLE_ASCII_FILETAG='ON'
         DBB_HOME='/var/dbb113'
         DBB_CONF='/var/dbb113/conf'
@@ -99,7 +99,7 @@ pipeline {
 //        ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/MVPGenapp'
         ARTIFACTORY_REPO_PATH='hyc-mvp-team-maven-local/PriyaGenapp'
         UCD_BUZTOOL_PATH='/var/ucd/v71/bin/buztool.sh'
-        UCD_HOME='/var/ucd/v71'
+        UCD_HOME='/var/ucd/v73'
         _BPX_JOBNAME = 'JENJOB'
      //  GROOVYZ_BUILD_EXTRA_OPTS='-DBB_PERSONAL_DAEMON'
      // GROOVYZ_BUILD_EXTRA_OPTS='-DBB_DAEMON_HOST 127.0.0.1 -DBB_DAEMON_PORT 8181'
