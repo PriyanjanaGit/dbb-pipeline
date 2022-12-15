@@ -11,16 +11,16 @@ def linuxAgent = 'master'
 // GIT repositories
 //def srcGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-pipeline.git'
 //def srcGitBranch = 'master'
-//def zAppBuildGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-zappbuild-new.git'
+//def zAppBuildGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-zappbuild-chg.git'
 //def zAppBuildGitBranch = 'develop' // Some important issues are not yet merged into master.
-//def dbbGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-new.git'
+//def dbbGitRepo = 'http://MVPGitLabServer1.fyre.ibm.com/mvpgenapp/dbb-chg.git'
 //def dbbGitBranch = 'main'
 def srcGitRepo = 'https://github.com/PriyanjanaGit/dbb-pipeline.git'
 def srcGitBranch = 'master'
-def zAppBuildGitRepo = 'https://github.com/PriyanjanaGit/dbb-zappbuild-new.git'
-def zAppBuildGitBranch = 'main'
-def dbbGitRepo = 'https://github.com/PriyanjanaGit/dbb-new.git'
-def dbbGitBranch = 'main'
+def zAppBuildGitRepo = 'https://github.com/PriyanjanaGit/dbb-zappbuild-chg.git'
+def zAppBuildGitBranch = 'master'
+def dbbGitRepo = 'https://github.com/PriyanjanaGit/dbb-chg.git'
+def dbbGitBranch = 'master'
 echo 'MVP-genapp Jenkinsfile pipeline DBB'
 // DBB
 def dbbHome='/var/dbb'
@@ -157,7 +157,7 @@ echo 'MVP-genapp Jenkinsfile pipeline dir -> MVP-genapp '
                                                                      ]]])
                     }
 
-                    dir("dbb-zappbuild-new") {
+                    dir("dbb-zappbuild-chg") {
                         sh(script: 'rm -f .git/info/sparse-checkout', returnStdout: true)
                         def scmVars =
                             checkout([$class: 'GitSCM', branches: [[name: zAppBuildGitBranch]],
@@ -168,7 +168,7 @@ echo 'MVP-genapp Jenkinsfile pipeline dir -> MVP-genapp '
                             ]]])
                     }
 
-                    dir("dbb-new") {
+                    dir("dbb-chg") {
                         sh(script: 'rm -f .git/info/sparse-checkout', returnStdout: true)
                         def scmVars =
                             checkout([$class: 'GitSCM', branches: [[name: dbbGitBranch]],
@@ -216,7 +216,7 @@ echo 'MVP-genapp Jenkinsfile pipeline dir -> MVP-genapp '
                         dbbHome = env.DBB_HOME
                         dbbUrl = env.DBB_URL
                         dbbHlq = env.DBB_HLQ
-                        sh "$dbbHome/bin/groovyz $dbbGroovyzOpts ${WORKSPACE}/dbb-zappbuild-new/build.groovy --logEncoding UTF-8 -w ${WORKSPACE} --application MVP-genapp --sourceDir ${WORKSPACE}/MVP-genapp  --workDir ${WORKSPACE}/BUILD-${BUILD_NUMBER} --hlq ${dbbHlq}.GENAPP --url $dbbUrl $dbbCredentialOptions -d $dbbBuildType $buildVerbose $dbbZunitCccOpts $dbbBuildExtraOpts -zTest"
+                        sh "$dbbHome/bin/groovyz $dbbGroovyzOpts ${WORKSPACE}/dbb-zappbuild-chg/build.groovy --logEncoding UTF-8 -w ${WORKSPACE} --application MVP-genapp --sourceDir ${WORKSPACE}/MVP-genapp  --workDir ${WORKSPACE}/BUILD-${BUILD_NUMBER} --hlq ${dbbHlq}.GENAPP --url $dbbUrl $dbbCredentialOptions -d $dbbBuildType $buildVerbose $dbbZunitCccOpts $dbbBuildExtraOpts -zTest"
                         def files = findFiles(glob: "**BUILD-${BUILD_NUMBER}/**/buildList.txt")
                         // Do not enter into some steps if nothing in the build list
                         hasBuildFiles = files.length > 0 && files[0].length > 0
@@ -279,7 +279,7 @@ echo 'MVP-genapp Jenkinsfile pipeline dir -> MVP-genapp '
                         def crContent = null
                         node( zOsAgentLabel ) {
                             BUILD_OUTPUT_FOLDER = sh (script: "ls ${WORKSPACE}/BUILD-${BUILD_NUMBER}  | grep build | sort -u", returnStdout: true).trim()
-                            sh "$DBB_HOME/bin/groovyz $dbbGroovyzOpts ${WORKSPACE}/dbb-new/Pipeline/RunIDZCodeReview/RunCodeReview.groovy --workDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/${BUILD_OUTPUT_FOLDER} -cr  ${WORKSPACE}/MVP-genapp/MVP-genapp/cr-rules/CodeReviewRules.dat -ccr  ${WORKSPACE}/MVP-genapp/MVP-genapp/cr-rules/CodeReviewRules.ccr"
+                            sh "$DBB_HOME/bin/groovyz $dbbGroovyzOpts ${WORKSPACE}/dbb-chg/Pipeline/RunIDZCodeReview/RunCodeReview.groovy --workDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/${BUILD_OUTPUT_FOLDER} -cr  ${WORKSPACE}/MVP-genapp/MVP-genapp/cr-rules/CodeReviewRules.dat -ccr  ${WORKSPACE}/MVP-genapp/MVP-genapp/cr-rules/CodeReviewRules.ccr"
                             dir ("${WORKSPACE}/BUILD-${BUILD_NUMBER}/${BUILD_OUTPUT_FOLDER}") {
                                 def crJunitFile = fileExists "CodeReviewJUNIT.xml"
                                 if ( crJunitFile ) {
@@ -323,7 +323,7 @@ EXTREPO.url=${artiUrl}
                                 echo " Start dbb-ucd-packaging.groovy "
  // password not encrypted, use my own
                          //       sh "cp $HOME/Jenkins-Cloud/workspace/artifactory.properties ${WORKSPACE}/BUILD-${BUILD_NUMBER}/artifactoy.properties"
-                                sh "$dbbHome/bin/groovyz $dbbGroovyzOpts ${WORKSPACE}/dbb-new/Pipeline/CreateUCDComponentVersion/dbb-ucd-packaging.groovy --buztool ${ucdBuztool} --component ${ucdComponent} --workDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/${BUILD_OUTPUT_FOLDER} -prop ${WORKSPACE}/BUILD-${BUILD_NUMBER}/artifactoy.properties"
+                                sh "$dbbHome/bin/groovyz $dbbGroovyzOpts ${WORKSPACE}/dbb-chg/Pipeline/CreateUCDComponentVersion/dbb-ucd-packaging.groovy --buztool ${ucdBuztool} --component ${ucdComponent} --workDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/${BUILD_OUTPUT_FOLDER} -prop ${WORKSPACE}/BUILD-${BUILD_NUMBER}/artifactoy.properties"
                             }
                         }
                     }
